@@ -1,6 +1,7 @@
 using MediatR;
 using KhN.Server.Commands;
 using Microsoft.AspNetCore.Mvc;
+using FluentResults;
 
 namespace KhN.Server.Controllers
 {
@@ -53,6 +54,23 @@ namespace KhN.Server.Controllers
             string message = _mediatR.Send<string>(commande).Result;
 
             return Ok(message);
+        }
+
+
+        [HttpGet("Get5")]
+        public IActionResult Get5()
+        {
+            DoSomeCode5Command commande = new DoSomeCode5Command() { SomeProperty = "Hello LegoLearn.ir" };
+            Result result = _mediatR.Send<Result>(commande).Result;
+
+            if (result.IsSuccess)
+            {
+                return Ok(result);
+            }
+            else
+            {
+                return BadRequest(result);
+            }
         }
     }
 }

@@ -5,11 +5,11 @@ namespace KhN.Server.Commands
     /// <summary>
     /// Command
     /// With Result
-    /// Sync
+    /// ASync
     /// </summary>
-    public class DoSomeCode3Command : IRequest<string>
+    public class DoSomeCode4Command : IRequest<string>
     {
-        public DoSomeCode3Command()
+        public DoSomeCode4Command()
         {
 
         }

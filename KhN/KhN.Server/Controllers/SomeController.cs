@@ -72,5 +72,21 @@ namespace KhN.Server.Controllers
                 return BadRequest(result);
             }
         }
+
+        [HttpGet("Get6")]
+        public IActionResult Get6()
+        {
+            DoSomeCode6Command commande = new DoSomeCode6Command() { SomeProperty = "Hello LegoLearn.ir" };
+            var result = _mediatR.Send<Result<string>>(commande).Result;
+
+            if (result.IsSuccess)
+            {
+                return Ok(result);
+            }
+            else
+            {
+                return BadRequest(result);
+            }
+        }
     }
 }

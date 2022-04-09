@@ -34,5 +34,15 @@ namespace KhN.Server.Controllers
 
             return Ok("OKkkk");
         }
+
+
+        [HttpGet("Get3")]
+        public IActionResult Get3()
+        {
+            DoSomeCode3Command commande = new DoSomeCode3Command() { SomeProperty = "Hello LegoLearn.ir" };
+            _mediatR.Send(commande);
+
+            return Ok(commande);
+        }
     }
 }

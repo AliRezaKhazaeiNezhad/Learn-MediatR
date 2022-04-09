@@ -12,12 +12,15 @@ namespace KhN.Server.CommandHandlers
         {
             var result = new Result<string>();
 
+
             try
             {
                 string message = string.Empty;
 
                 result.WithError("This is Errorrrrrrrrrr ... .");
                 //result.WithSuccess("This is Successssssssssss ... .");
+
+                result.WithValue(request.SomeProperty);
             }
             catch (Exception e)
             {

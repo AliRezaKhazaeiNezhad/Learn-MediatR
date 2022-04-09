@@ -40,9 +40,9 @@ namespace KhN.Server.Controllers
         public IActionResult Get3()
         {
             DoSomeCode3Command commande = new DoSomeCode3Command() { SomeProperty = "Hello LegoLearn.ir" };
-            _mediatR.Send(commande);
+            string message = _mediatR.Send<string>(commande).Result;
 
-            return Ok(commande);
+            return Ok(message);
         }
     }
 }

@@ -13,8 +13,8 @@ namespace KhN.Server.CommandHandlers
         protected override void Handle(DoSomeCode1Command request)
         {
             string message = request.SomeProperty.ToUpper();
-            Console.WriteLine(message);
 
+            Console.WriteLine(message);
             System.Diagnostics.Debug.WriteLine(message);
         }
     }

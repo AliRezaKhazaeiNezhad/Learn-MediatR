@@ -6,8 +6,6 @@ namespace KhN.Server.CommandHandlers
 {
     public class DoSomeCode5CommandHandler : IRequestHandler<DoSomeCode5Command, Result>
     {
-
-
         public async Task<Result> Handle(DoSomeCode5Command request, CancellationToken cancellationToken)
         {
             Result result = new Result();
@@ -16,8 +14,8 @@ namespace KhN.Server.CommandHandlers
             {
                 string message = string.Empty;
 
-                result.WithError("This is Errorrrrrrrrrr ... .");
-                //result.WithSuccess("This is Successssssssssss ... .");
+                //result.WithError("This is Errorrrrrrrrrr ... .");
+                result.WithSuccess("This is Successssssssssss ... .");
             }
             catch (Exception e)
             {

@@ -77,7 +77,7 @@ namespace KhN.Server.Controllers
         public IActionResult Get6()
         {
             DoSomeCode6Command commande = new DoSomeCode6Command() { SomeProperty = "Hello LegoLearn.ir" };
-            var result = _mediatR.Send<Result<string>>(commande).Result;
+            Result<string> result = _mediatR.Send(commande).Result;
 
             if (result.IsSuccess)
             {
@@ -85,7 +85,7 @@ namespace KhN.Server.Controllers
             }
             else
             {
-                return BadRequest(result);
+                return BadRequest(result.ToResult());
             }
         }
     }

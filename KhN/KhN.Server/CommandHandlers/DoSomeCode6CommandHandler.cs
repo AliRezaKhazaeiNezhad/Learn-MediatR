@@ -10,15 +10,14 @@ namespace KhN.Server.CommandHandlers
 
         public async Task<Result<string>> Handle(DoSomeCode6Command request, CancellationToken cancellationToken)
         {
-            var result = new Result<string>();
-
+            Result<string> result = new Result<string>();
 
             try
             {
                 string message = string.Empty;
 
-                result.WithError("This is Errorrrrrrrrrr ... .");
-                //result.WithSuccess("This is Successssssssssss ... .");
+                //result.WithError("This is Errorrrrrrrrrr ... .");
+                result.WithSuccess("This is Successssssssssss ... .");
 
                 result.WithValue(request.SomeProperty);
             }

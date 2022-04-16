@@ -2,6 +2,7 @@ using MediatR;
 using KhN.Server.Commands;
 using Microsoft.AspNetCore.Mvc;
 using FluentResults;
+using KhN.Server.Notifications;
 
 namespace KhN.Server.Controllers
 {
@@ -86,6 +87,23 @@ namespace KhN.Server.Controllers
             else
             {
                 return BadRequest(result.ToResult());
+            }
+        }
+
+
+        [HttpGet("Get7")]
+        public IActionResult Get7()
+        {
+            try
+            {
+                DoSomeCodeNotification notif = new DoSomeCodeNotification() { SomeProperty = "Hello LegoLearn.ir" };
+                _mediatR.Publish(notif);
+
+                return Ok("It is done");
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
             }
         }
     }
